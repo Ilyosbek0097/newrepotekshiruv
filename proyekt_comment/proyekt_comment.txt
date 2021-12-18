@@ -1,0 +1,59 @@
+if(filiali != '')
+                {
+                    $.ajax({
+                        type:"POST",
+                        url:'/tekshiruv/filial_ajax',
+                        data:{filiali:filiali},
+                        dataType:'json',
+                        success: function(data){
+                           
+                            $.each(data.filial_tovar, function (key, value) { 
+                                //  console.log(value['tnomi']);
+                                 var tbody = $('#barcha_tovarlar');
+                                    var c = 1;
+
+                                 if(value['miqdori']!='null')
+                                 {
+                                    
+                                    // var tr = (
+                                    //             '<tr>' +
+                                    //                 '<td>'+ c +'</td>'+
+                                    //                 '<td>'+ value['tnomi'] +'</td>'+
+                                    //                 '<td>'+ '' +'</td>'+
+                                    //                 '<td>'+ '' +'</td>'+
+                                    //                 '<td>'+ '' +'</td>'+
+                                    //                 '<td>'+ '' +'</td>'+
+                                    //             '</tr>'
+                                    //             );
+                                    var tr = (
+                                                '<tr>' +
+                                                    '<td>'+ c +'</td>'+
+                                                    '<td>'+ value['tnomi'] +'</td>'+
+                                                    '<td>'+ value['miqdori'] +'</td>'+
+                                                    '<td>'+ value['kirimnarx_uzs']+'</td>'+
+                                                    '<td>'+ value['kirimnarx_usd']+'</td>'+
+                                                    '<td>'+ 0+'</td>'+
+                                                '</tr>'
+                                                );
+                                               tbody.append(tr);
+                                 }
+                                //  else{
+                                    
+                                //     var tr = (
+                                //                 '<tr>' +
+                                //                     '<td>'+ c +'</td>'+
+                                //                     '<td>'+ value['tnomi'] +'</td>'+
+                                //                     '<td>'+ value['miqdori'] +'</td>'+
+                                //                     '<td>'+ value['kirimnarx_uzs']+'</td>'+
+                                //                     '<td>'+ value['kirimnarx_usd']+'</td>'+
+                                //                     '<td>'+ 0+'</td>'+
+                                //                 '</tr>'
+                                //                 );
+                                //  }
+                                 
+                                 c++;
+
+                            });
+                        }
+                    });
+                }
