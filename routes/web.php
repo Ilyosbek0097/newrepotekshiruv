@@ -40,6 +40,7 @@ Route::group(['middleware'=>['rolecontrol']],function(){
     Route::post('/tekshiruv/filial_name_send',[TekshiruvController::class,'filial_name_send'])->name('tekshiruv.filial_name_send');
     Route::get('/tekshiruv/filial_change',[TekshiruvController::class,'filial_change'])->name('tekshiruv.filial_change');
     Route::get('/tekshiruv/getproduct',[TekshiruvController::class,'getProduct'])->name('tekshiruv.getproducts');
+    Route::get('/tekshiruv/cost_product',[TekshiruvController::class,'cost_product'])->name('tekshiruv.cost_product');
 
     // ***********Add Tovar Ajaxesess*****************
     Route::get('/tekshiruv/tur_brend_ajax',[TekshiruvController::class,'tur_brend_ajax'])->name('tekshiruv.tur_brend_ajax');

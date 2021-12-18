@@ -270,10 +270,14 @@
                         <span class="micon dw dw-home"></span><span class="mtext">Bosh Sahifa</span>
                     </a>
                 </li>
-                <a href="{{ route('tekshiruv.filial_change') }}" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-add"></span><span class="mtext">Tovar Qo'shish</span>
-                </a>
+                
                 <li>
+                    <a href="{{ route('tekshiruv.filial_change') }}" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-add"></span><span class="mtext">Tovar Qo'shish</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('tekshiruv.cost_product') }}"></a>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
